@@ -1,0 +1,14 @@
+{
+    "name": "tnt-node-red",
+    "version": "1.0.0",
+    "description": "node-red",
+    "main": "index.js",
+    "scripts": {
+        "start": "./node_modules/node-red/bin/node-red-pi -u ."
+    },
+    "author": "emanuel balcazar",
+    "license": "ISC",
+    "dependencies": {
+        "node-red": "^0.18.4"
+    }
+}

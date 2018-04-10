@@ -1,0 +1,16 @@
+{
+    "name": "storage-api",
+    "version": "1.0.0",
+    "description": "Servidor HTTP para la persistencia y recuperacion de flows de node-red",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "emanuel balcazar",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "express": "^4.16.3",
+        "morgan": "^1.9.0"
+    }
+}

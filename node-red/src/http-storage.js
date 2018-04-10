@@ -1,67 +1,29 @@
-// https://nodered.org/docs/api/storage/methods/
+const http = require('http');
+const localFileSystem = require('./node_modules/node-red/red/runtime/storage/localfilesystem');
+var httpStorage = localFileSystem;
 
-const settings = {};
+httpStorage.getFlows = function () {
 
-exports.init = function (settings) {
     return new Promise((resolve, reject) => {
-        console.log('> init');
-        settings = settings;
-        resolve(settings);
+        http.get({
+            host: '127.0.0.1',
+            port: 8100,
+            path: '/api/getFlows'
+        }, (res) => {
+            var responseData = "";
+            res.on("data", function (data) {
+                responseData += data;
+            });
+            res.on("end", function () {
+                resolve([]);
+            });
+        });
     });
-};
+}
 
-exports.getFlows = function () {
-    return new Promise((resolve, reject) => {
-        console.log('> getFlows');
-        resolve();
-    });
-};
+/* httpStorage.saveFlows = function (flows) {
+    console.log('saveFlows');
+    return localFileSystem.saveFlows(flows);
+} */
 
-exports.saveFlows = function (flows) {
-    return new Promise((resolve, reject) => {
-        console.log('> saveFlows');
-        resolve();
-    });
-};
-
-exports.getCredentials = function () {
-    return new Promise((resolve, reject) => {
-        console.log('> getCredentials');
-        resolve();
-    });
-};
-
-exports.saveCredentials = function (credentials) {
-    return new Promise((resolve, reject) => {
-        console.log('> saveCredentials');
-        resolve();
-    });
-};
-
-exports.getSettings = function () {
-    return new Promise((resolve, reject) => {
-        console.log('> getSettings');
-        resolve(settings);
-    });
-};
-
-exports.saveSettings = function (settings) {
-    return new Promise((resolve, reject) => {
-        console.log('> saveSettings');
-        resolve();
-    });
-};
-
-exports.getSessions = function () {
-    return new Promise((resolve, reject) => {
-        console.log('> getSessions')
-        resolve();
-    });
-};
-
-exports.saveSessions = function (sessions) {
-    return new Promise((resolve, reject) => {
-        console.log('> saveSessions');
-        resolve();
-    });
-};
+module.exports = httpStorage;

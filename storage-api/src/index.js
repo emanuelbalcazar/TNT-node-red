@@ -1,3 +1,4 @@
+// index.js - main application module.
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan')

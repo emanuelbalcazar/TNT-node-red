@@ -2,18 +2,24 @@ const http = require('http');
 const localFileSystem = require('./node_modules/node-red/red/runtime/storage/localfilesystem');
 var httpStorage = localFileSystem;
 
-httpStorage.getFlows = function () {
+const api = {
+    HOST: "127.0.0.1",
+    PORT: 8100
+};
 
+httpStorage.getFlows = function () {
     return new Promise((resolve, reject) => {
         http.get({
-            host: '127.0.0.1',
-            port: 8100,
+            host: api.HOST,
+            port: api.PORT,
             path: '/api/getFlows'
         }, (res) => {
             var responseData = "";
+
             res.on("data", function (data) {
                 responseData += data;
             });
+            
             res.on("end", function () {
                 resolve([]);
             });

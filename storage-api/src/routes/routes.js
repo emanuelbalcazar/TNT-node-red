@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
-// service information path.
+// get flows from database.
 router.get('/getFlows', (req, res) => {
     res.send({ data: "emanuel" });
 });

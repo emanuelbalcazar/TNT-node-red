@@ -1,6 +1,5 @@
 // router.js - application route module.
 const express = require('express');
-const async = require('async');
 const router = express.Router();
 const Flow = require('../models/flow');
 
@@ -10,16 +9,9 @@ router.get('/getFlows', (req, res) => {
 });
 
 router.post('/saveFlows', (req, res) => {
-    async.map(req.body, function (flow, callback) {
-        Flow.create(flow, function (error, saved) {
-            callback(error, saved);
-        })
-    }, function (error, result) {
-        if (error)
-            return res.status(500).send({ error: error });
-
-        return res.send({ response: result });
-    });
+    Flow.create(req.body, function (error, saved) {
+        res.send({ error: error, response: saved });
+    })
 });
 
 module.exports = router;

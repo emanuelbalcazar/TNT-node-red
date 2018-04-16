@@ -1,5 +1,5 @@
 {
     "host": "http://localhost",
     "port": 8100,
-    "database": "mongodb://localhost/flows"
+    "database": "mongodb://mongodb/flows"
 }

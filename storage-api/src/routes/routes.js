@@ -4,7 +4,7 @@ const router = express.Router();
 const Flow = require('../models/flow');
 
 router.get('/info', (req, res) => {
-    res.send({ name: "storage api", version: 1.0 });
+    res.send({ name: "storage api", version: "1.0", date: "april 2018" });
 });
 
 // get flows from database.

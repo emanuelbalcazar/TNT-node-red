@@ -27,7 +27,8 @@ httpStorage.getFlows = function () {
             });
 
             response.on('end', function () {
-                resolve([receivedData]);
+                var flows = JSON.parse(receivedData);
+                resolve(flows.response);
             });
         });
     });
@@ -47,17 +48,15 @@ httpStorage.saveFlows = function (flows) {
             res.setEncoding('utf8');
 
             res.on('data', (chunk) => {
-                console.log('Respuesta del servidor:', chunk);
+
             });
 
             res.on('end', () => {
-                console.log('Flows enviados, codigo', res.statusCode);
                 resolve();
             });
         });
 
         req.on('error', (err) => {
-            console.error('Error al realizar el request', err.message);
             reject(err.message);
         });
 

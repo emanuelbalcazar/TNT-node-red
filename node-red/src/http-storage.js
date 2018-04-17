@@ -26,9 +26,10 @@ httpStorage.getFlows = function () {
                 receivedData += data;
             });
 
+            // response contains: [{ flows: [], version: '', id: '' }].
             response.on('end', function () {
-                var flows = JSON.parse(receivedData);
-                resolve(flows.response);
+                var data = JSON.parse(receivedData);
+                resolve(data[0].flows);
             });
         });
     });
@@ -61,7 +62,7 @@ httpStorage.saveFlows = function (flows) {
         });
 
         // write data to request body
-        req.write(JSON.stringify(flows));
+        req.write(JSON.stringify({ flows: flows, version: new Date() }));
         req.end();
     });
 }

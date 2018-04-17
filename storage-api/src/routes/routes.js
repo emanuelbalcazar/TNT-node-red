@@ -11,18 +11,16 @@ router.get('/info', (req, res) => {
 
 // get flows from database.
 router.get('/getFlows', (req, res) => {
-    Flow.find({}, function (err, all) {
-        defaultCallback(res, err, all);
-    })
+    Flow.findOne().sort({ version: -1 }).exec(function (err, flows) {
+        defaultCallback(res, err, flows);
+    });
 });
 
 // save all flows in database.
 router.post('/saveFlows', (req, res) => {
-    Flow.remove({}, function (err) {
-        Flow.create(req.body, function (err, saved) {
-            defaultCallback(res, err, saved);
-        })
-    });
+    Flow.create(req.body, function (err, saved) {
+        defaultCallback(res, err, saved);
+    })
 });
 
 // delete a single flow.
@@ -43,7 +41,7 @@ function defaultCallback(res, error, result) {
     if (error)
         return res.status(500).send({ error: error });
 
-    return res.send({ response: result });
+    return res.send(result);
 }
 
 module.exports = router;

@@ -11,9 +11,9 @@ router.get('/info', (req, res) => {
 
 // get flows from database.
 router.get('/getFlows', (req, res) => {
-    Flow.find({}, {}, { sort: { 'version': -1 } }, function (err, all) {
+    Flow.find({}).sort({version: -1}).limit(1).exec(function(err, all) {
         defaultCallback(res, err, all);
-    })
+    });
 });
 
 // save all flows in database.

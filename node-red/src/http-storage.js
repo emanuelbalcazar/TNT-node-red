@@ -63,7 +63,7 @@ httpStorage.saveFlows = function (flows) {
         });
 
         // write data to request body
-        req.write(JSON.stringify({ flows: flows, version: new Date().toString() }));
+        req.write(JSON.stringify({ flows: flows, version: new Date() }));
         req.end();
     });
 }

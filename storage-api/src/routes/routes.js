@@ -9,7 +9,7 @@ router.get('/info', (req, res) => {
     defaultCallback(res, false, info);
 });
 
-// get flows from database.
+// get the last saved flows.
 router.get('/getFlows', (req, res) => {
     Flow.find({}).sort({ version: -1 }).limit(1).exec(function (err, all) {
         defaultCallback(res, err, all);
@@ -20,20 +20,6 @@ router.get('/getFlows', (req, res) => {
 router.post('/saveFlows', (req, res) => {
     Flow.create(req.body, function (err, saved) {
         defaultCallback(res, err, saved);
-    });
-});
-
-// delete a single flow.
-router.delete('/flows/:id', (req, res) => {
-    Flow.remove({ _id: req.params.id }, function (err) {
-        defaultCallback(res, err, true);
-    });
-});
-
-// delete all flows.
-router.delete('/flows', (req, res) => {
-    Flow.remove({}, function (err) {
-        defaultCallback(res, err, true);
     });
 });
 

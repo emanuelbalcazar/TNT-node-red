@@ -11,7 +11,7 @@ router.get('/info', (req, res) => {
 
 // get flows from database.
 router.get('/getFlows', (req, res) => {
-    Flow.find({}).sort({version: -1}).limit(1).exec(function(err, all) {
+    Flow.find({}).sort({ version: -1 }).limit(1).exec(function (err, all) {
         defaultCallback(res, err, all);
     });
 });
@@ -20,7 +20,7 @@ router.get('/getFlows', (req, res) => {
 router.post('/saveFlows', (req, res) => {
     Flow.create(req.body, function (err, saved) {
         defaultCallback(res, err, saved);
-    })
+    });
 });
 
 // delete a single flow.

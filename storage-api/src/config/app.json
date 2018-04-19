@@ -1,5 +1,6 @@
 {
     "host": "http://localhost",
     "port": 8100,
-    "database": "mongodb://mongodb/flows"
+    "database": "mongodb://mongodb/flows",
+    "timeToWait": 3000
 }

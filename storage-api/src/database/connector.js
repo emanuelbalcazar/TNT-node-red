@@ -1,16 +1,33 @@
-// module of connection to the database.
-var mongoose = require('mongoose');
-var url = require('../config/app').database;
+// connector.js - module of connection to the database.
+const mongoose = require('mongoose');
+const url = require('../config/app.json').database;
+const TIME_TO_WAIT = require('../config/app.json').timeToWait;
 
-var connection = mongoose.connect(url);
+var connection = {};
 
-mongoose.connection.on('connected', () => {
-    console.log('[Mongoose] - conectado en:', url);
-});
+// wait a certain time.
+async function wait() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve()
+        }, TIME_TO_WAIT)
+    });
+}
 
-mongoose.connection.on('error', (err) => {
-    console.log('[Mongoose] - error de conexion:', err);
-    process.exit(1);
-});
+// start the connection to mongodb.
+async function connect() {
+    await wait();
+    connection = mongoose.connect(url);
 
-module.exports = connection;
+    mongoose.connection.on('connected', () => {
+        console.log('[Mongoose] - conectado en:', url);
+        return connection;
+    });
+
+    mongoose.connection.on('error', (err) => {
+        console.log('[Mongoose] - error de conexion:', err);
+        process.exit(1);
+    });
+}
+
+module.exports = connect();

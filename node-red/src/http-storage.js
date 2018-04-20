@@ -36,6 +36,7 @@ httpStorage.getFlows = function () {
     });
 }
 
+// sends to persist the flows.
 httpStorage.saveFlows = function (flows) {
     return new Promise((resolve, reject) => {
         const options = {
@@ -50,7 +51,7 @@ httpStorage.saveFlows = function (flows) {
             res.setEncoding('utf8');
 
             res.on('data', (chunk) => {
-
+                // nothing to do
             });
 
             res.on('end', () => {

@@ -1,5 +1,14 @@
 version: '2'
 services:
+    nginx:
+        build: ./nginx
+        volumes:
+        - ./nginx/nginx/:/etc/nginx
+        ports:
+        - "80:80"
+        depends_on:
+        - nodered
+
     nodered:
         build: ./node-red
         ports:
@@ -20,3 +29,4 @@ services:
         image: mongo
         ports:
         - "27017:27017"
+        

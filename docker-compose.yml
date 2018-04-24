@@ -8,6 +8,7 @@ services:
         - "80:80"
         depends_on:
         - nodered
+        - mqtt
 
     nodered:
         build: ./node-red
@@ -33,4 +34,6 @@ services:
     mqtt:
         build: ./mqtt
         volumes:
-        - ./mqtt/:/etc/mosquitto
+        - ./mqtt/:/mosquitto/config
+        ports:
+        - "9001:9001"

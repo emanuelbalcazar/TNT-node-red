@@ -13,4 +13,5 @@ Verificar en:
 
 * El proxy reverso se encuentra configurado en `nginx/nginx/conf.d/localhost.conf`.
 * Se modifico node-red para que escuche en `http://localhost:1880/nodered` y se le indico el plugin que debe utilizar para persistir/recuperar los flows.
-* El script en `scripts/initialize-nginx.sh` extrae los archivos de configuracion utilizados por NGINX desde un contenedor en docker y los coloca en la carpeta correspondiente, solo debe utilizarse si no se encuentran los archivos indicados.
+* El script de `scripts/initialize-nginx.sh` extrae los archivos de configuracion utilizados por NGINX desde un contenedor en docker y los coloca en la carpeta correspondiente, solo debe utilizarse si no se encuentran los archivos de configuracion.
+* El script de `scripts/mosquitto-conf` extrae los archivos de configuracion de eclipse-mosquitto desde el contenedor en docker y los coloca en la carpeta correspondiente, solo debe utilizarse si no se encuentra el archivo de configuracion.

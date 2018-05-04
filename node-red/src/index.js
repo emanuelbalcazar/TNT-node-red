@@ -21,8 +21,8 @@ var settings = {
     functionGlobalContext: { }    // enables global context
 };
 
-// initialise the runtime with a server and settings
-RED.init(server,settings);
+// initialize the runtime with a server and settings
+RED.init(server, settings);
 
 // serve the editor UI from /red
 app.use(settings.httpAdminRoot, RED.httpAdmin);

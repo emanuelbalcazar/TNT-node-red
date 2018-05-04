@@ -4,7 +4,7 @@
     "description": "node-red",
     "main": "index.js",
     "scripts": {
-        "start": "./node_modules/node-red/bin/node-red-pi -u .",
+        "start": "node index.js",
         "debug": "./node_modules/node-red/bin/node-red-pi -u . --inspect"
     },
     "author": "emanuel balcazar",

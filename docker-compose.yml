@@ -13,7 +13,7 @@ services:
     nodered:
         build: ./node-red
         ports:
-        - "1880:1880"
+        - "8200:8200"
         volumes:
         - ./node-red/src:/src
         depends_on:

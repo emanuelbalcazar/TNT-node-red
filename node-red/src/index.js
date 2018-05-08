@@ -22,8 +22,8 @@ var settings = {
     httpAdminRoot:"/nodered",
     httpNodeRoot: "/api",
     httpRoot: "/nodered",
-    userDir:".",
-    storageModule: require("./http-storage"),
+    userDir:"./userDir",
+    storageModule: require("./plugins/http-storage"),
     functionGlobalContext: { }    // enables global context
 };
 

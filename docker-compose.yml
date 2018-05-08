@@ -3,7 +3,7 @@ services:
     nginx:
         build: ./nginx
         volumes:
-        - ./nginx/nginx/:/etc/nginx
+        - ./nginx/nginx/:/etc/nginx/
         ports:
         - "80:80"
         depends_on:

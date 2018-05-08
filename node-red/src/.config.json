@@ -375,7 +375,7 @@
   "node-red-dashboard": {
    "name": "node-red-dashboard",
    "version": "2.8.2",
-   "local": true,
+   "local": false,
    "nodes": {
     "ui_base": {
      "name": "ui_base",
@@ -383,7 +383,7 @@
       "ui_base"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_base.js"
     },
@@ -393,7 +393,7 @@
       "ui_button"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_button.js"
     },
@@ -403,7 +403,7 @@
       "ui_dropdown"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_dropdown.js"
     },
@@ -413,7 +413,7 @@
       "ui_switch"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_switch.js"
     },
@@ -423,7 +423,7 @@
       "ui_slider"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_slider.js"
     },
@@ -433,7 +433,7 @@
       "ui_numeric"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_numeric.js"
     },
@@ -443,7 +443,7 @@
       "ui_text_input"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_text_input.js"
     },
@@ -453,7 +453,7 @@
       "ui_date_picker"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_date_picker.js"
     },
@@ -463,7 +463,7 @@
       "ui_colour_picker"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_colour_picker.js"
     },
@@ -473,7 +473,7 @@
       "ui_form"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_form.js"
     },
@@ -483,7 +483,7 @@
       "ui_text"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_text.js"
     },
@@ -493,7 +493,7 @@
       "ui_gauge"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_gauge.js"
     },
@@ -503,7 +503,7 @@
       "ui_chart"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_chart.js"
     },
@@ -513,7 +513,7 @@
       "ui_audio"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_audio.js"
     },
@@ -523,7 +523,7 @@
       "ui_toast"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_toast.js"
     },
@@ -533,7 +533,7 @@
       "ui_ui_control"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_ui_control.js"
     },
@@ -543,7 +543,7 @@
       "ui_template"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_template.js"
     },
@@ -553,7 +553,7 @@
       "ui_link"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_link.js"
     },
@@ -563,7 +563,7 @@
       "ui_tab"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_tab.js"
     },
@@ -573,7 +573,7 @@
       "ui_group"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-dashboard",
      "file": "/src/node_modules/node-red-dashboard/nodes/ui_group.js"
     }
@@ -582,7 +582,7 @@
   "node-red-node-rbe": {
    "name": "node-red-node-rbe",
    "version": "0.2.3",
-   "local": true,
+   "local": false,
    "nodes": {
     "rbe": {
      "name": "rbe",
@@ -590,7 +590,7 @@
       "rbe"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-node-rbe",
      "file": "/src/node_modules/node-red-node-rbe/rbe.js"
     }
@@ -599,7 +599,7 @@
   "node-red-node-email": {
    "name": "node-red-node-email",
    "version": "0.1.27",
-   "local": true,
+   "local": false,
    "nodes": {
     "email": {
      "name": "email",
@@ -608,7 +608,7 @@
       "e-mail in"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-node-email",
      "file": "/src/node_modules/node-red-node-email/61-email.js"
     }
@@ -617,7 +617,7 @@
   "node-red-node-feedparser": {
    "name": "node-red-node-feedparser",
    "version": "0.1.12",
-   "local": true,
+   "local": false,
    "nodes": {
     "feedparse": {
      "name": "feedparse",
@@ -625,7 +625,7 @@
       "feedparse"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-node-feedparser",
      "file": "/src/node_modules/node-red-node-feedparser/32-feedparse.js"
     }
@@ -634,7 +634,7 @@
   "node-red-node-twitter": {
    "name": "node-red-node-twitter",
    "version": "0.1.13",
-   "local": true,
+   "local": false,
    "nodes": {
     "twitter": {
      "name": "twitter",
@@ -644,7 +644,7 @@
       "twitter out"
      ],
      "enabled": true,
-     "local": true,
+     "local": false,
      "module": "node-red-node-twitter",
      "file": "/src/node_modules/node-red-node-twitter/27-twitter.js"
     }

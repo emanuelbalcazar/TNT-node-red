@@ -1,12 +1,20 @@
 const http = require('http');
-const express = require("express");
-const RED = require("node-red");
+const express = require('express');
+const router = express.Router();
+
+const RED = require('node-red');
 
 // create an Express app
 const app = express();
 
 // add a simple route for static content served from 'public'
-app.use("/", express.static("public"));
+app.use('/', express.static('public'));
+
+router.get('/file', (req, res) => {
+    res.render('index');
+});
+
+app.use(router);
 
 // create a server
 const server = http.createServer(app);

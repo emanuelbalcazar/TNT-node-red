@@ -1,17 +1,15 @@
 const http = require('http');
+const path = require('path');
 const express = require('express');
-const router = express.Router();
-
 const RED = require('node-red');
 
 // create an Express app
 const app = express();
+const router = express.Router();
 
-// add a simple route for static content served from 'public'
-app.use('/', express.static('public'));
-
-router.get('/file', (req, res) => {
-    res.render('index');
+// serve static files
+router.get('/nodered/file', (req, res) => {
+    res.sendFile(path.join(__dirname + '/public/file.html'));
 });
 
 app.use(router);
@@ -19,7 +17,7 @@ app.use(router);
 // create a server
 const server = http.createServer(app);
 
-// Create the settings object - see default settings.js file for other options
+// create the settings object - see default settings.js file for other options
 var settings = {
     httpAdminRoot:"/nodered",
     httpNodeRoot: "/api",

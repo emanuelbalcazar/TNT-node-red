@@ -3,3 +3,7 @@ node-red/src/package-lock.json
 
 storage-api/src/node_modules/
 storage-api/src/package-lock.json
+
+node-red/src/userDir/.config.json
+node-red/src/userDir/package.json
+node-red/src/userDir/lib/

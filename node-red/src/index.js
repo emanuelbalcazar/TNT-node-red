@@ -22,7 +22,7 @@ var settings = {
     httpAdminRoot:"/nodered",
     httpNodeRoot: "/api",
     httpRoot: "/nodered",
-    userDir:"./userDir",
+    userDir:"/data",
     storageModule: require("./plugins/http-storage"),
     functionGlobalContext: { }    // enables global context
 };

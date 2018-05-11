@@ -11,7 +11,8 @@ services:
         - mqtt
 
     nodered:
-        build: ./node-red
+        #build: ./node-red
+        image: 64e0aea0c159
         ports:
         - "8200:8200"
         volumes:

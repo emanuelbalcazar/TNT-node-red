@@ -13,7 +13,7 @@
         },
         inputs: 1,
         outputs: 1,
-        icon: "file.png",
+        icon: "svg-icon.png",
         label: function () {
             return this.name || "svg-storage";
         },
@@ -26,12 +26,10 @@
                     return function (progress) {
                         var content = progress.currentTarget.result;
                         var filename = file.name;
-
                         $("#node-input-filename").val(filename);
                         $("#node-input-content").val(content);
                     };
                 })(file);
-
                 // read in the image file as a data.
                 reader.readAsText(file);
             });

@@ -3,24 +3,53 @@
         category: 'function',
         color: '#a6bbcf',
         defaults: {
-            name: { value: "" }
+            name: { value: "" },
+            content: {
+                value: "", validate: function (value) {
+                    return true;
+                }
+            }
         },
         inputs: 1,
         outputs: 1,
         icon: "file.png",
         label: function () {
             return this.name || "svg-storage";
+        },
+        oneditprepare: function () {
+            $("#node-input-svg").on("change", function (event) {
+                var file = event.target.files[0];
+                var reader = new FileReader();
+
+                reader.onload = (function (file) {
+                    return function (progress) {
+                        var content = progress.currentTarget.result;
+                        $("#node-input-content").val(content);
+                    };
+                })(file);
+
+                // read in the image file as a data.
+                reader.readAsText(file);
+            });
         }
     });
+
 </script>
 
 <script type="text/x-red" data-template-name="svg-storage">
     <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
+        <label for="node-input-name"><i class="icon-tag"></i>Nombre:</label>
+        <input type="text" title="" id="node-input-name">
     </div>
+
+    <div class="form-row">
+        <label for="node-input-svg"><i class="icon-tag"></i>Archivo:</label>
+        <input type="file" title="" id="node-input-svg" accept="image/svg+xml">
+    </div>
+
+    <input type="hidden" title="" id="node-input-content">
 </script>
 
 <script type="text/x-red" data-help-name="svg-storage">
-    <p>Mi nodo bien piola</p>
+    <p>Nodo personalizado</p>
 </script>

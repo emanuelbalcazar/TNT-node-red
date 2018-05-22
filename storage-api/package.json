@@ -4,7 +4,7 @@
     "description": "Servidor HTTP para la persistencia y recuperacion de flows de node-red",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js"
+        "start": "node ./src/index.js"
     },
     "author": "emanuel balcazar",
     "license": "ISC",

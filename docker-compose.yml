@@ -11,12 +11,13 @@ services:
         - mqtt
 
     nodered:
-        #build: ./node-red
-        image: 64e0aea0c159
+        build: ./node-red
+        #image: 64e0aea0c159
         ports:
         - "8200:8200"
         volumes:
         - ./node-red/src:/src
+        - ./node-red/src/customNodes/node-red-contrib-svg-storage:/data/node_modules/node-red-contrib-svg-storage
         depends_on:
         - storage
 

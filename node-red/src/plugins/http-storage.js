@@ -1,6 +1,6 @@
 // http-storage.js - node-red custom plugin.
 const http = require('http');
-const localFileSystem = require('../node_modules/node-red/red/runtime/storage/localfilesystem');
+const localFileSystem = require('../../node_modules/node-red/red/runtime/storage/localfilesystem');
 var httpStorage = localFileSystem;
 
 const api = {

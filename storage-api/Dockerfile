@@ -1,8 +1,8 @@
 FROM node:alpine
 LABEL author=<emanuelbalcazar13@gmail.com>
 
-ADD ./src src
-WORKDIR ./src
-RUN apk --update add bash
+COPY package.json .
 RUN npm install
+ADD ./src src
+RUN apk --update add bash
 CMD npm start

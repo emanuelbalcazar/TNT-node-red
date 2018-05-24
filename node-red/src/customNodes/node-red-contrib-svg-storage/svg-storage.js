@@ -9,11 +9,18 @@ module.exports = function (RED) {
 
         // check topic en msg.req.url
         node.on('input', function (msg) {
+
             if (msg.req.url === "/svg-list") {
                 msg.payload = [{ id: 1, name: filename }];
                 return node.send(msg);
             }
-            msg.payload = filecontent;
+
+            if (msg.req.params.id === filename) {
+                msg.payload = filecontent;
+                return node.send(msg);
+            }
+
+            msg.payload = "Ruta rest no valida, utilice '/svg-list' o '/svg-get/:id'";
             node.send(msg);
         });
     }

@@ -1,3 +1,6 @@
+/**
+ * https://www.npmjs.com/package/web-mqtt-client
+ */
 var client = new MqttClient({
     host: 'some.domain.tld/mqtt',
     port: 5678,

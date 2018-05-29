@@ -8,8 +8,8 @@ const app = express();
 const router = express.Router();
 
 // serve static files
-router.get('/nodered/file', (req, res) => {
-    res.sendFile(path.join(__dirname + '/public/file.html'));
+router.get('/nodered/index', (req, res) => {
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 app.use(router);

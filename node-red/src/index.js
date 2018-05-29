@@ -7,9 +7,11 @@ const RED = require('node-red');
 const app = express();
 const router = express.Router();
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 // serve static files
 router.get('/nodered/index', (req, res) => {
-    res.sendFile(path.join(__dirname + '/public/index.html'));
+    res.sendFile(path.join(__dirname + '/public/mqtt.html'));
 });
 
 app.use(router);

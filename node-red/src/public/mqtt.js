@@ -1,8 +1,10 @@
-var MqttClient = require('./libs/mqtt-client');
+var client = new MqttClient({
+    host: 'some.domain.tld/mqtt',
+    port: 5678,
+    will: {
+        topic: 'farewells',
+        payload: 'So long!',
+    }
+});
 
-var mqtt = {
-
-
-};
-
-module.exports = mqtt;
+console.log('mqtt', client);

@@ -14,32 +14,12 @@
     <script type="text/javascript" src="/libs/bootstrap.min.js"></script>
     <script type="text/javascript" src="/libs/d3.min.js"></script>
 
-    <script type="text/javascript" src="/mqtt.js"></script>
-
 </head>
 
 <body>
     <div id="canvas"></div>
-
-    <script type="text/javascript">
-        var sampleSVG = d3.select("#canvas")
-            .append("svg")
-            .attr("width", 100)
-            .attr("height", 100);
-
-        sampleSVG.append("circle")
-            .style("stroke", "gray")
-            .style("fill", "white")
-            .attr("r", 40)
-            .attr("cx", 50)
-            .attr("cy", 50)
-            .transition()
-            .delay(100)
-            .duration(1000)
-            .attr("r", 10)
-            .attr("cx", 30)
-            .style("fill", "black");
-    </script>
 </body>
+
+<script type="text/javascript" src="/mqtt.js"></script>
 
 </html>

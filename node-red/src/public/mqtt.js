@@ -1,41 +1,28 @@
-/**
- * https://www.npmjs.com/package/web-mqtt-client
- */
-var client = new MqttClient({
-    host: 'localhost',
-    port: 9001,
-    will: {
-        topic: 'messages',
-        payload: 'So long!',
+var client = new Paho.MQTT.Client(window.location.host, 80, "/mqtt", "cliente-TNT");
+
+// se ejecuta cuando llega un mensaje.
+client.onMessageArrived = (message) => {
+    console.log('[MQTT] - Nuevo mensaje:', message);
+}
+
+client.connect({
+    onSuccess: () => {
+        console.log('[MQTT] - Me conecte');
+        //client.publish('/a', 'Hola soy el cliente TNT', 0, false);
+        client.subscribe('/test/#', {
+            onSuccess: () => {
+                console.log('[MQTT] - Me subscribi correctamente');
+            },
+            onFailure: () => {
+                console.log('[MQTT] - Fallo la subscripcion');
+            }
+        })
+    },
+    onFailure: () => {
+        console.log('[MQTT] - Fallo la conexion a mqtt');
     }
 });
 
-console.log('[mqtt] - cliente creado', client);
-
-//client.connect();
-//client.publish('messages', 'Hola', {}, () => {});
-
-client.on('connecting', () => {
-    console.log('[mqtt] - conectando...');
-});
-
-client.on('connect', () => {
-    console.log('[mqtt] - conectado');
-});
-
-client.on('disconnect', () => {
-    console.log('[mqtt] - desconectado');
-});
-
-client.on('offline', () => {
-    console.log('[mqtt] - desconectado, intente conectarse manualmente');
-});
-
-client.on('message', console.log.bind(console, 'MQTT message arrived: '));
-
-client.on('message', (topic, payload, details) => {
-    console.log('[mqtt] - [%s] - %s', topic, payload);
-});
 
 var sampleSVG = d3.select("#canvas")
     .append("svg")

@@ -22,9 +22,10 @@ const server = http.createServer(app);
 // create the settings object - see default settings.js file for other options
 var settings = {
     httpAdminRoot:"/nodered",
-    httpNodeRoot: "/api",
+    httpNodeRoot: "/nodered",
     httpRoot: "/nodered",
     userDir:"/data",
+    /* ui: { path: "/ui/" }, */
     storageModule: require("./plugins/http-storage"),
     functionGlobalContext: { }    // enables global context
 };

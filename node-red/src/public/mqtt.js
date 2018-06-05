@@ -3,6 +3,12 @@ var client = new Paho.MQTT.Client(window.location.host, 80, "/mqtt", "cliente-TN
 // se ejecuta cuando llega un mensaje.
 client.onMessageArrived = (message) => {
     console.log('[MQTT] - Nuevo mensaje:', message);
+
+    d3.select("circle").style("fill", "red");
+    d3.select("circle").style("stroke", "blue");
+    d3.select("circle").attr("cx", 150)
+    d3.select("circle").attr("cy", 150)
+    d3.select("circle").attr("r", 80);
 }
 
 client.connect({
@@ -26,8 +32,8 @@ client.connect({
 
 var sampleSVG = d3.select("#canvas")
     .append("svg")
-    .attr("width", 100)
-    .attr("height", 100);
+    .attr("width", 300)
+    .attr("height", 300);
 
 sampleSVG.append("circle")
     .style("stroke", "gray")

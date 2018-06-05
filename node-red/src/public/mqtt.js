@@ -1,4 +1,7 @@
-var client = new Paho.MQTT.Client(window.location.host, 80, "/mqtt", "cliente-TNT");
+const clientId = parseInt(Math.random() * 100, 10);
+console.log('Creando ID de cliente:', clientId);
+
+var client = new Paho.MQTT.Client(window.location.host, 80, "/mqtt", clientId.toString());
 
 // se ejecuta cuando llega un mensaje.
 client.onMessageArrived = (message) => {

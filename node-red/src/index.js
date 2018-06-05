@@ -7,7 +7,7 @@ const RED = require('node-red');
 const app = express();
 const router = express.Router();
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/nodered', express.static(path.join(__dirname, 'public')));
 
 // serve static files
 router.get('/nodered/index', (req, res) => {

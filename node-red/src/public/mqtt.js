@@ -13,8 +13,7 @@ var client = new MqttClient({
 console.log('[mqtt] - cliente creado', client);
 
 //client.connect();
-client.publish('messages', 'Hola', {}, () => {});
-
+//client.publish('messages', 'Hola', {}, () => {});
 
 client.on('connecting', () => {
     console.log('[mqtt] - conectando...');
@@ -37,7 +36,6 @@ client.on('message', console.log.bind(console, 'MQTT message arrived: '));
 client.on('message', (topic, payload, details) => {
     console.log('[mqtt] - [%s] - %s', topic, payload);
 });
-
 
 var sampleSVG = d3.select("#canvas")
     .append("svg")

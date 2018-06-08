@@ -36,9 +36,11 @@ client.connect({
 client.onMessageArrived = (message) => {
     console.log('[MQTT] - Llego un nuevo mensaje:', message);
     let selection = d3.select("svg").selectAll('[topico="' + message.topic + '"]');
+    let params = JSON.parse(message.payloadString);
 
     if (selection) {
-        selection.style("fill", "yellow");
+        selection.styles(params.styles);
+        selection.attrs(params.attrs);
     }
 }
 

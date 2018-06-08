@@ -25,7 +25,6 @@ var settings = {
     httpNodeRoot: "/nodered",
     httpRoot: "/nodered",
     userDir:"/data",
-    /* ui: { path: "/ui/" }, */
     storageModule: require("./plugins/http-storage"),
     functionGlobalContext: { }    // enables global context
 };

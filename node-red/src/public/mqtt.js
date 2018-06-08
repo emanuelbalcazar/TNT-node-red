@@ -1,22 +1,25 @@
-// topic
+/**
+ * Topico al cual me voy a subscribir, debe ser acorde al TP4.
+ */
 const TOPIC = '/PM/tnt/#';
 
-// generate random client id.
+// genero un ID de cliente aleatorio para permitir multiples conexiones.
 const clientId = parseInt(Math.random() * 100, 10);
-console.log('[MQTT] - Creando ID de cliente:', clientId);
 
+// creo un cliente MQTT.
 const client = new Paho.MQTT.Client(window.location.host, 80, "/mqtt", clientId.toString());
 
+// inicio la conexion, y me subscribo al topico definido en la constante.
 client.connect({
     onSuccess: () => {
-        console.log('[MQTT] - Me conecte');
+        console.log('[MQTT] - Me conecte correctamente');
 
         client.subscribe(TOPIC, {
             onSuccess: () => {
-                console.log('[MQTT] - Me subscribi correctamente');
+                console.log('[MQTT] - Me subscribi correctamente al topico', TOPIC);
             },
             onFailure: () => {
-                console.log('[MQTT] - Fallo la subscripcion');
+                console.log('[MQTT] - Fallo la subscripcion al topico', TOPIC);
             }
         })
     },
@@ -25,17 +28,18 @@ client.connect({
     }
 });
 
+/**
+ * Modifica los elementos del SVG cuando llega un nuevo mensaje.
+ * El topico permite seleccionar los elementos con atributo topico="algo".
+ * Ej: d3.select("svg").selectAll('[topico="/PM/tnt/a"]').style("fill", "yellow")
+ */
 client.onMessageArrived = (message) => {
-    // ver el topico para saber QUE modificar de los svg usando el atributo topico="algo".
-    // modificar los atributos seleccionando los elementos con: d3.select("svg").selectAll("[topico='/a/c']")
-    // extraer el payload y modificar los attr y styles que contenga.
-    // d3.select("svg").selectAll('[topico="/PM/tnt/a"]').style("fill", "yellow")
     console.log('[MQTT] - Llego un nuevo mensaje:', message);
-    d3.select("circle").style("fill", "red");
-    d3.select("circle").style("stroke", "blue");
-    d3.select("circle").attr("cx", 150)
-    d3.select("circle").attr("cy", 150)
-    d3.select("circle").attr("r", 80);
+    let selection = d3.select("svg").selectAll('[topico="' + message.topic + '"]');
+
+    if (selection) {
+        selection.style("fill", "yellow");
+    }
 }
 
 // TODO: eliminar en el futuro, solo se usa para probar la edicion.

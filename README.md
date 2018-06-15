@@ -11,8 +11,10 @@ docker-compose -f docker-compose.yml up -d --build
 ```
 
 Verificar en: 
-* Node Red: http://localhost/nodered
-* Storage Backend Api: http://localhost:8100/api/info
+* Node Red: [http://localhost/nodered]()
+* Storage Backend Api: [http://localhost:8100/api/info]()
+* Dashboard: [http://localhost/nodered/ui]()
+
 
 ### NOTA
 

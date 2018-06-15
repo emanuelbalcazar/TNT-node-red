@@ -39,13 +39,14 @@ client.onMessageArrived = (message) => {
     let params = JSON.parse(message.payloadString);
 
     if (selection) {
+        console.log('seleccion:', selection);
         selection.styles(params.styles);
         selection.attrs(params.attrs);
     }
 }
 
 // TODO: eliminar en el futuro, solo se usa para probar la edicion.
-const circleData = [
+/* const circleData = [
     { "cx": 20, "cy": 20, "radius": 20 },
     { "cx": 70, "cy": 70, "radius": 20 }];
 
@@ -90,4 +91,4 @@ var rectangleAttributes = rectangles
     .attr("topico", function (d) { return d.topico; })
     .attr("height", function (d) { return d.height; })
     .attr("width", function (d) { return d.width; })
-    .style("fill", function (d) { return d.color; });
+    .style("fill", function (d) { return d.color; }); */

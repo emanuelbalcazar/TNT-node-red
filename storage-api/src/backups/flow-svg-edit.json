@@ -267,7 +267,7 @@
             "type": "function",
             "z": "ce9a9ac9.780ed8",
             "name": "Nivel de Presion",
-            "func": "let params = {\n    styles: {\n        fill: \"white\",\n        stroke: \"blue\"\n    }\n}\n\nif (msg.payload <= 30)\n    params.styles.fill = \"cyan\";\n\nif (msg.payload > 30 && msg.payload <= 60)\n    params.styles.fill = \"yellow\";\n\nif (msg.payload > 60)\n    params.styles.fill = \"orangered\";\n\nmsg.payload = params;\n\nreturn msg;",
+            "func": "let params = {\n    styles: {\n        fill: \"white\",\n        stroke: \"blue\"\n    }\n}\n\nif (msg.payload <= 30)\n    params.styles.fill = \"palegreen\";\n\nif (msg.payload > 30 && msg.payload <= 60)\n    params.styles.fill = \"yellow\";\n\nif (msg.payload > 60)\n    params.styles.fill = \"orangered\";\n\nmsg.payload = params;\n\nreturn msg;",
             "outputs": 1,
             "noerr": 0,
             "x": 360,

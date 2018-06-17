@@ -39,7 +39,6 @@ client.onMessageArrived = (message) => {
     let params = JSON.parse(message.payloadString);
 
     if (selection) {
-        console.log('seleccion:', selection);
         selection.styles(params.styles);
         selection.attrs(params.attrs);
     }

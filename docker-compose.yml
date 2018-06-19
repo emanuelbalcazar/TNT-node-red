@@ -38,5 +38,5 @@ services:
         volumes:
         - ./mqtt/mosquitto.d/:/etc/mosquitto.d/
         ports:
-        - "9001:9001"
+        - "9883:9883"
         - "1883:1883"

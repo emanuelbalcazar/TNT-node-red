@@ -36,7 +36,7 @@ services:
         #build: ./mqtt
         image: jllopis/mosquitto
         volumes:
-        - ./mqtt/:/mosquitto/config
+        - ./mqtt/:/etc/mosquitto/
         ports:
         - "9001:9001"
         - "1883:1883"

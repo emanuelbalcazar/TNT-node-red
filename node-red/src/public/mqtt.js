@@ -39,7 +39,15 @@ client.onMessageArrived = (message) => {
     let params = JSON.parse(message.payloadString);
 
     if (selection) {
+
+        if (params.selectorId) {
+            selection = selection.select("#" + params.selectorId);
+        }
+
+        console.log('selection', selection);
         selection.styles(params.styles);
         selection.attrs(params.attrs);
     }
 }
+
+// d3.select("svg").selectAll("[topico='/PM/tnt/p1']").select("#path3790").style("fill", "yellow")

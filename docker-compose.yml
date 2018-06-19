@@ -33,7 +33,8 @@ services:
         - "27017:27017"
     
     mqtt:
-        build: ./mqtt
+        #build: ./mqtt
+        image: jllopis/mosquitto
         volumes:
         - ./mqtt/:/mosquitto/config
         ports:

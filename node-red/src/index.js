@@ -14,6 +14,18 @@ router.get('/nodered/index', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/mqtt.html'));
 });
 
+router.post('/auth', (req, res) => {
+    res.status(200).send("ok");
+});
+
+router.post('/superuser', (req, res) => {
+    res.status(200).send("ok");
+});
+
+router.post('/acl', (req, res) => {
+    res.status(200).send("ok");
+});
+
 app.use(router);
 
 // create a server
@@ -21,12 +33,12 @@ const server = http.createServer(app);
 
 // create the settings object - see default settings.js file for other options
 var settings = {
-    httpAdminRoot:"/nodered",
+    httpAdminRoot: "/nodered",
     httpNodeRoot: "/nodered",
     httpRoot: "/nodered",
-    userDir:"/data",
+    userDir: "/data",
     storageModule: require("./plugins/http-storage"),
-    functionGlobalContext: { }    // enables global context
+    functionGlobalContext: {}    // enables global context
 };
 
 // initialize the runtime with a server and settings

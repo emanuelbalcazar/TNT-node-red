@@ -5,27 +5,11 @@ const RED = require('node-red');
 
 // create an Express app
 const app = express();
-const router = express.Router();
 
+// static files.
 app.use('/nodered', express.static(path.join(__dirname, 'public')));
 
-// serve static files
-router.get('/nodered/index', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/mqtt.html'));
-});
-
-router.post('/auth', (req, res) => {
-    res.status(200).send("ok");
-});
-
-router.post('/superuser', (req, res) => {
-    res.status(200).send("ok");
-});
-
-router.post('/acl', (req, res) => {
-    res.status(200).send("ok");
-});
-
+const router = require('./routes/routes');
 app.use(router);
 
 // create a server

@@ -1,5 +1,4 @@
 {
-
     "flows" : [ 
         {
             "id" : "ce9a9ac9.780ed8",
@@ -254,7 +253,7 @@
             "type" : "function",
             "z" : "ce9a9ac9.780ed8",
             "name" : "P1 - Molienda",
-            "func" : "let params = {\n    selectorId: false,\n    styles: {\n        fill: \"white\",\n        stroke: \"blue\"\n    }\n}\n\nif (msg.payload <= 30) {\n    params.styles.fill = \"palegreen\";\n    params.selectorId =\"level1\"\n}\n\nif (msg.payload > 30 && msg.payload <= 60) {\n   params.styles.fill = \"yellow\";\n   params.selectorId = \"level2\"\n}\n    \n\nif (msg.payload > 60) {\n    params.styles.fill = \"orangered\";\n    params.selectorId = \"level3\"\n}\n\n\nmsg.payload = params;\n\nreturn msg;",
+            "func" : "let params = {\n    selectorId: false,\n    styles: {\n        fill: \"white\",\n        stroke: \"blue\"\n    }\n}\n\nif (msg.payload <= 30) {\n    params.styles.fill = \"palegreen\";\n    params.selectorId =\"level1\"\n}\n\nif (msg.payload > 30 && msg.payload <= 60) {\n   params.styles.fill = \"yellow\";\n   params.selectorId = \"level2\"\n}\n    \n\nif (msg.payload > 60) {\n    params.styles.fill = \"orangered\";\n    params.selectorId = \"level3\"\n}\n\nmsg.payload = params;\n\nreturn msg;",
             "outputs" : 1,
             "noerr" : 0,
             "x" : 360,
@@ -279,6 +278,6 @@
             "wires" : []
         }
     ],
-    "version" : ISODate("2018-06-19T19:04:24.078Z"),
+    "version" : ISODate("2018-06-20T12:54:45.233Z"),
     "__v" : 0
 }

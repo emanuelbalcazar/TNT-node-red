@@ -1,10 +1,15 @@
 const http = require('http');
 const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
 const RED = require('node-red');
+
+const connector = require('./database/connector');
 
 // create an Express app
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // static files.
 app.use('/nodered', express.static(path.join(__dirname, 'public')));
@@ -15,6 +20,9 @@ app.use(views);
 
 const mqtt = require('./routes/mqtt-auth');
 app.use(mqtt);
+
+const users = require('./routes/user');
+app.use('/nodered/api', users);
 
 // create a server
 const server = http.createServer(app);

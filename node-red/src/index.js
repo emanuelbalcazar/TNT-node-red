@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const RED = require('node-red');
 
+const PORT = require('./config/app.json').port;
 const connector = require('./database/connector');
 
 // create an Express app
@@ -46,7 +47,7 @@ app.use(settings.httpAdminRoot, RED.httpAdmin);
 // serve the http nodes UI from /api
 app.use(settings.httpNodeRoot, RED.httpNode);
 
-server.listen(8200);
+server.listen(PORT);
 
 // start the runtime
 RED.start();

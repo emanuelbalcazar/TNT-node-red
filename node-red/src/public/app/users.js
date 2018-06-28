@@ -1,7 +1,7 @@
 $(function () {
 
     $("#jsGrid").jsGrid({
-        height: "90%",
+        height: "80%",
         width: "100%",
         filtering: true,
         inserting: true,
@@ -11,7 +11,7 @@ $(function () {
         autoload: true,
         pageSize: 10,
         pageButtonCount: 5,
-        deleteConfirm: "¿borrar usuario?",
+        deleteConfirm: "¿Borrar el usuario?",
         controller: {
             loadData: function (filter) {
                 return $.ajax({
@@ -44,8 +44,8 @@ $(function () {
         fields: [
             { name: "username", type: "text", title: "Nombre de Usuario", width: 80, filtering: false },
             { name: "password", type: "text", title: "Contraseña", width: 80, filtering: false },
-            { name: "superuser", type: "checkbox", title: "¿Super Usuario?", filtering: false, sorting: false },
-            { type: "control" }
+            { name: "superuser", type: "checkbox", title: "Superusuario", width: 30,filtering: false, sorting: false },
+            { type: "control", width: 30 }
         ]
     });
 });

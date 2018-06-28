@@ -5,5 +5,4 @@ RUN apk --update add bash
 COPY package.json .
 RUN npm install
 ADD ./src src
-RUN npm run seed
 CMD npm start

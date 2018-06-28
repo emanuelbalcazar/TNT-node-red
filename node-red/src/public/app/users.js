@@ -1,9 +1,7 @@
 $(function () {
 
-    console.log('usuarios')
-
     $("#jsGrid").jsGrid({
-        height: "70%",
+        height: "90%",
         width: "100%",
         filtering: true,
         inserting: true,
@@ -18,8 +16,7 @@ $(function () {
             loadData: function (filter) {
                 return $.ajax({
                     type: "GET",
-                    url: "/nodered/api/users",
-                    //data: filter
+                    url: "/nodered/api/users"
                 });
             },
             insertItem: function (item) {

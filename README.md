@@ -1,6 +1,6 @@
 # Taller de Nuevas Tecnologias
 
-Este proyecto forma parte del trabajo practico 2, 3 y 4 de la materia.
+Este proyecto forma parte del trabajo practico 2, 3, 4 y 5 de la materia.
 
 
 ### Despliegue

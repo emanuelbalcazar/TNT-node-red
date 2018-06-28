@@ -9,8 +9,12 @@ const app = express();
 // static files.
 app.use('/nodered', express.static(path.join(__dirname, 'public')));
 
-const router = require('./routes/routes');
-app.use(router);
+// declare all routes.
+const views = require('./routes/routes');
+app.use(views);
+
+const mqtt = require('./routes/mqtt-auth');
+app.use(mqtt);
 
 // create a server
 const server = http.createServer(app);

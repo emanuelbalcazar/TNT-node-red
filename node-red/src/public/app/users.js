@@ -45,9 +45,9 @@ $(function () {
             }
         },
         fields: [
-            { name: "username", type: "text", width: 80, filtering: false },
-            { name: "password", type: "text", width: 80, filtering: false },
-            { name: "superuser", type: "checkbox", title: "superusr", sorting: false },
+            { name: "username", type: "text", title: "Nombre de Usuario", width: 80, filtering: false },
+            { name: "password", type: "text", title: "Contraseña", width: 80, filtering: false },
+            { name: "superuser", type: "checkbox", title: "¿Super Usuario?", filtering: false, sorting: false },
             { type: "control" }
         ]
     });

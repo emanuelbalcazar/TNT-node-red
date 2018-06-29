@@ -1,0 +1,17 @@
+{
+  "name": "users-manager",
+  "version": "1.0.0",
+  "description": "Modulo para el manejo de usuarios mqtt en mongodb",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "emanuel balcazar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.1.5"
+  }
+}

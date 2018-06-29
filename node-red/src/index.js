@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const RED = require('node-red');
 
 const PORT = require('./config/app.json').port;
-const connector = require('./database/connector');
 
 // create an Express app
 const app = express();
@@ -21,9 +20,6 @@ app.use(views);
 
 const mqtt = require('./routes/mqtt-auth');
 app.use(mqtt);
-
-const users = require('./routes/user');
-app.use('/nodered/api', users);
 
 // create a server
 const server = http.createServer(app);

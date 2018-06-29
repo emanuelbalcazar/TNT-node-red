@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // get views.
 const views = require('./routes/views');
-app.use(views);
+app.use('/public', views);
 
 // define all users api routes.
 const users = require('./routes/user');

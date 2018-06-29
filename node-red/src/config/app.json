@@ -1,6 +1,4 @@
 {
     "host": "http://localhost",
-    "port": 8200,
-    "database": "mongodb://mongodb/tnt",
-    "timeToWait": 2000
+    "port": 8200
 }

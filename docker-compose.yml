@@ -27,6 +27,13 @@ services:
         depends_on:
         - mongodb
 
+    projects-manager:
+        build: ./projects-manager
+        ports:
+        - "8300:8300"
+        depends_on:
+        - mongodb
+
     mongodb:
         image: mongo
         ports:

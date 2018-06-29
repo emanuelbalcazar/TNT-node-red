@@ -1,7 +1,7 @@
 {
-  "name": "users-manager",
+  "name": "projects-manager",
   "version": "1.0.0",
-  "description": "Modulo para el manejo de usuarios mqtt en mongodb",
+  "description": "Modulo para la administracion de usuarios y proyectos",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",

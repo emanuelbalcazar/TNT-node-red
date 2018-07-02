@@ -14,6 +14,8 @@ Verificar en:
 * Node Red: [http://localhost/nodered]()
 * Storage Backend Api: [http://localhost:8100/api/info]()
 * Dashboard: [http://localhost/nodered/ui]()
+* SVG MQTT Client: [http://localhost/nodered/mqtt]()
+* MQTT User Admin: [http://localhost:8300/public/users]()
 
 
 ### NOTA

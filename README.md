@@ -11,11 +11,11 @@ docker-compose -f docker-compose.yml up -d --build
 ```
 
 Verificar en: 
-* Node Red: [http://localhost/nodered]()
-* Storage Backend Api: [http://localhost:8100/api/info]()
-* Dashboard: [http://localhost/nodered/ui]()
-* SVG MQTT Client: [http://localhost/nodered/mqtt]()
-* MQTT User Admin: [http://localhost:8300/public/users]()
+* Node Red: [http://<server-url>/nodered]()
+* Storage Backend Api: [http://<server-url>:8100/api/info]()
+* Dashboard: [http://<server-url>/nodered/ui]()
+* SVG MQTT Client: [http://<server-url>/nodered/mqtt]()
+* MQTT User Admin: [http://<server-url>:8300/public/users]()
 
 
 ### NOTA

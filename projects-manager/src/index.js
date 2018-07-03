@@ -10,16 +10,17 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// TODO: '/public' => '/projects' deberia pasarse en una variable de entorno.
 // get views.
 const views = require('./routes/views');
 app.use('/public', views);
 
 // define all users api routes.
 const users = require('./routes/user');
-app.use('/api', users);
+app.use('/public/api', users);
 
 // static files.
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // set host and port.
 app.set('host', config.host || "localhost");

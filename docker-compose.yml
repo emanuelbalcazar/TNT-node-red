@@ -1,9 +1,10 @@
 version: '2'
 services:
-    nginx:
-        build: ./nginx
+    
+    redbird:
+        build: ./redbird
         volumes:
-        - ./nginx/nginx/:/etc/nginx/
+        - ./redbird/src:/src
         ports:
         - "80:80"
         depends_on:
@@ -22,6 +23,8 @@ services:
 
     storage:
         build: ./storage-api
+        volumes:
+        - ./storage-api/src:/src
         ports:
         - "8100:8100"
         depends_on:
@@ -29,6 +32,8 @@ services:
 
     projects-manager:
         build: ./projects-manager
+        volumes:
+        - ./projects-manager/src:/src
         ports:
         - "8300:8300"
         depends_on:

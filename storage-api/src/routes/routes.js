@@ -1,7 +1,7 @@
 // router.js - application route module.
 const express = require('express');
 const router = express.Router();
-const Flow = require('../models/flow');
+const connection = require('mongoose').connection;
 
 // service information path.
 router.get('/info', (req, res) => {
@@ -10,16 +10,20 @@ router.get('/info', (req, res) => {
 });
 
 // get the last saved flows.
-router.get('/getFlows', (req, res) => {
-    Flow.find({}).sort({ version: -1 }).limit(1).exec(function (err, all) {
-        defaultCallback(res, err, all);
+router.get('/getFlows/:collection', (req, res) => {
+    connection.db.collection(req.params.collection, (err, collection) => {
+        collection.find({}).sort({ version: -1 }).limit(1).toArray((err, data) => {
+            defaultCallback(res, err, data);
+        });
     });
 });
 
 // save all flows in database.
-router.post('/saveFlows', (req, res) => {
-    Flow.create(req.body, function (err, saved) {
-        defaultCallback(res, err, saved);
+router.post('/saveFlows/:collection', (req, res) => {
+    connection.db.collection(req.params.collection, (err, collection) => {
+        collection.insert(req.body, (err, data) => {
+            defaultCallback(res, err, data);
+        });
     });
 });
 

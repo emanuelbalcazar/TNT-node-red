@@ -1,0 +1,15 @@
+{
+  "name": "redbird",
+  "version": "1.0.0",
+  "description": "Proxy reverso con soporte en Docker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "carlos emanuel balcazar",
+  "license": "ISC",
+  "dependencies": {
+    "redbird": "latest"
+  }
+}

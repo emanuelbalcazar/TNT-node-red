@@ -14,7 +14,7 @@ httpStorage.getFlows = function () {
         http.get({
             host: api.HOST,
             port: api.PORT,
-            path: '/api/getFlows'
+            path: '/api/getFlows/nodered'
         }, function (response) {
             var receivedData = "";
 
@@ -42,7 +42,7 @@ httpStorage.saveFlows = function (flows) {
         const options = {
             host: api.HOST,
             port: api.PORT,
-            path: '/api/saveFlows',
+            path: '/api/saveFlows/nodered',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }
         };

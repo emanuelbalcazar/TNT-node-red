@@ -19,6 +19,9 @@ app.use('/public', views);
 const users = require('./routes/user');
 app.use('/public/api', users);
 
+const projects = require('./routes/project');
+app.use('/public/api', projects);
+
 // static files.
 app.use('/public', express.static(path.join(__dirname, 'public')));
 

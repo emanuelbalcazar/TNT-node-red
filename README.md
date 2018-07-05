@@ -21,13 +21,15 @@ npm start
 ```
 
 Verificar en: 
-* Node Red: http://<server-url>/nodered
-* Storage Backend Api: http://<server-url>:8100/api/info
-* Dashboard: http://<server-url>/nodered/ui
-* SVG MQTT Client: http://<server-url>/nodered/mqtt
-* MQTT User Admin: http://<server-url>/public/users
-* Projects Admin: http://<server-url>/public/projects
-* Container Manager: escuchando en http://<server-url>:8400 por defecto.
+* Node Red: http://`server-url`/nodered
+* Storage Backend Api: http://`server-url`:8100/api/info
+* Dashboard: http://`server-url`/nodered/ui
+* SVG MQTT Client: http://`server-url`/nodered/mqtt
+* MQTT User Admin: http://`server-url`/public/users
+* Projects Admin: http://`server-url`/public/projects
+* Container Manager: escuchando en http://`server-url`:8400 por defecto.
+
+Donde `server-url` es la URL del servidor que ejecuta las aplicaciones.
 
 ### NOTA
 

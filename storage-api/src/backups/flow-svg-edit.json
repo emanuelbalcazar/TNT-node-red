@@ -1,4 +1,5 @@
 {
+    "_id" : ObjectId("5b3e7a70e656e00019a2206a"),
     "flows" : [ 
         {
             "id" : "ce9a9ac9.780ed8",
@@ -276,7 +277,37 @@
             "x" : 550,
             "y" : 360,
             "wires" : []
+        }, 
+        {
+            "id" : "1224ae9f.d854b1",
+            "type" : "mqtt in",
+            "z" : "ce9a9ac9.780ed8",
+            "name" : "",
+            "topic" : "/projects/#",
+            "qos" : "2",
+            "broker" : "5225bdce.a2b904",
+            "x" : 190,
+            "y" : 480,
+            "wires" : [ 
+                [ 
+                    "75c75128.08977"
+                ]
+            ]
+        }, 
+        {
+            "id" : "75c75128.08977",
+            "type" : "debug",
+            "z" : "ce9a9ac9.780ed8",
+            "name" : "MQTT Projects",
+            "active" : true,
+            "tosidebar" : true,
+            "console" : false,
+            "tostatus" : false,
+            "complete" : "payload",
+            "x" : 550,
+            "y" : 480,
+            "wires" : []
         }
     ],
-    "version" : "ISODate('2018-06-20T12:54:45.233Z')"
+    "version" : "2018-07-05T20:07:12.868Z"
 }

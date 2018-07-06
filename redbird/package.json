@@ -10,6 +10,7 @@
   "author": "carlos emanuel balcazar",
   "license": "ISC",
   "dependencies": {
-    "redbird": "latest"
+    "redbird": "latest",
+    "mqtt": "^2.18.2"
   }
 }

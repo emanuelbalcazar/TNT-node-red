@@ -11,7 +11,7 @@ router.get('/info', (req, res) => {
 
 // get the last saved flows.
 router.get('/getFlows/:collection', (req, res) => {
-    connection.db.collection(req.params.collection, (err, collection) => {
+    connection.db.collection(req.params.collection || 'nodered', (err, collection) => {
         collection.find({}).sort({ version: -1 }).limit(1).toArray((err, data) => {
             defaultCallback(res, err, data);
         });
@@ -20,7 +20,7 @@ router.get('/getFlows/:collection', (req, res) => {
 
 // save all flows in database.
 router.post('/saveFlows/:collection', (req, res) => {
-    connection.db.collection(req.params.collection, (err, collection) => {
+    connection.db.collection(req.params.collection || 'nodered', (err, collection) => {
         collection.insert(req.body, (err, data) => {
             defaultCallback(res, err, data);
         });

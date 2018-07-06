@@ -3,6 +3,10 @@ LABEL author=<emanuelbalcazar13@gmail.com>
 
 RUN apk --update add bash
 
+# enviroments
+ENV prefix "nodered"
+ENV collection "nodered"
+
 # instalo el dashboard en el userDir
 RUN mkdir -p /data
 WORKDIR /data

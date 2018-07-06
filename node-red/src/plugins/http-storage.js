@@ -5,8 +5,12 @@ var httpStorage = localFileSystem;
 
 const api = {
     HOST: "storage",
-    PORT: 8100
+    PORT: 8100,
+    COLLECTION: process.env.collection || 'nodered'
 };
+
+console.log('[STORAGE PLUGIN]:', api)
+console.log('ENV', process.env)
 
 // get flows from storage-api component.
 httpStorage.getFlows = function () {
@@ -14,7 +18,7 @@ httpStorage.getFlows = function () {
         http.get({
             host: api.HOST,
             port: api.PORT,
-            path: '/api/getFlows/nodered'
+            path: '/api/getFlows/' + api.COLLECTION
         }, function (response) {
             var receivedData = "";
 
@@ -42,7 +46,7 @@ httpStorage.saveFlows = function (flows) {
         const options = {
             host: api.HOST,
             port: api.PORT,
-            path: '/api/saveFlows/nodered',
+            path: '/api/saveFlows/' + api.COLLECTION,
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }
         };

@@ -5,6 +5,7 @@ var schema = mongoose.Schema({
     name: { type: String },
     prefix: { type: String },
     collectionName: { type: String },
+    port: { type: Number },
     created_at: { type: Date, default: new Date }
 });
 

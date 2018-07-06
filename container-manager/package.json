@@ -1,7 +1,7 @@
 {
-  "name": "projects-manager",
+  "name": "container-manager",
   "version": "1.0.0",
-  "description": "Modulo para la administracion de usuarios y proyectos",
+  "description": "administrador de contenedores",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
@@ -10,9 +10,8 @@
   "author": "emanuel balcazar",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "mongoose": "^5.1.5",
-    "mqtt": "latest"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mqtt": "^2.18.2"
   }
 }

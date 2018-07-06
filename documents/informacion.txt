@@ -1,0 +1,2 @@
+Disparar un nuevo nodered con puerto externo en 8201:
+- docker-compose run --name="demo" -p 8201:8200 -e prefix='demo' -e collection='demo' nodered

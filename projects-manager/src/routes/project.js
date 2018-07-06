@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const mqtt = require('../database/mqtt');
 const Project = require('../models/project');
 
 router.get('/projects', (req, res) => {
@@ -10,7 +11,9 @@ router.get('/projects', (req, res) => {
 
 router.post('/projects', (req, res) => {
     Project.create(req.body, (err, created) => {
-        defaultCallback(res, err, created);
+        mqtt.publish('/projects/create', JSON.stringify(req.body), (err, granted) => {
+            defaultCallback(res, err, granted);
+        });
     });
 });
 
@@ -22,7 +25,9 @@ router.put('/projects', (req, res) => {
 
 router.delete('/projects', (req, res) => {
     Project.remove({ _id: req.body._id }, (err, deleted) => {
-        defaultCallback(res, err, deleted);
+        mqtt.publish('/projects/remove', JSON.stringify(req.body), (err, granted) => {
+            defaultCallback(res, err, granted);
+        });
     });
 });
 

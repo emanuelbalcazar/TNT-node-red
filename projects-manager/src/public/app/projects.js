@@ -45,6 +45,7 @@ $(function () {
             { name: "name", type: "text", title: "Nombre", width: 40, filtering: false },
             { name: "prefix", type: "text", title: "Prefijo", width: 40, filtering: false },
             { name: "collectionName", type: "text", title: "Colección", width: 40,filtering: false, sorting: false },
+            { name: "port", type: "number", title: "Puerto Externo", width: 30, filtering: false },
             { type: "control", width: 30 }
         ]
     });

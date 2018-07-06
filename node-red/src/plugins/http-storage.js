@@ -10,7 +10,6 @@ const api = {
 };
 
 console.log('[STORAGE PLUGIN]:', api)
-console.log('ENV', process.env)
 
 // get flows from storage-api component.
 httpStorage.getFlows = function () {

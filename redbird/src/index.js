@@ -15,7 +15,7 @@ var noderedResolver = function (host, url) {
 
 var mqttResolver = function (host, url) {
     if (/^\/mqtt/.test(url))
-        return 'http://mqtt:9883';
+        return 'http://mqtt:9001';
 }
 
 var nodeContainers = new Array;

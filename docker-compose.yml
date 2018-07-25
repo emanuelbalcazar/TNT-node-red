@@ -45,9 +45,10 @@ services:
         - "27017:27017"
     
     mqtt:
-        image: jllopis/mosquitto
+        build: ./mqtt
+        #image: jllopis/mosquitto
         volumes:
-        - ./mqtt/mosquitto.d/:/etc/mosquitto.d/
+         - ./mqtt/:/mosquitto/config
         ports:
         - "9883:9883"
         - "9001:9001"

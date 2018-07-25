@@ -28,6 +28,8 @@ Verificar en:
 * MQTT User Admin: http://`server-url`/public/users
 * Projects Admin: http://`server-url`/public/projects
 * Container Manager: escuchando en http://`server-url`:8400 por defecto.
+* Method Draw: http://`server-url`:8080/index.html
+
 
 Donde `server-url` es la URL del servidor que ejecuta las aplicaciones.
 

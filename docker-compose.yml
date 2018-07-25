@@ -53,3 +53,13 @@ services:
         - "9883:9883"
         - "9001:9001"
         - "1883:1883"
+
+    nginx:
+        build: ./nginx
+        volumes:
+        - ./nginx/nginx/:/etc/nginx
+        - ./method-draw/src/:/usr/share/nginx/html
+        ports:
+        - "8080:8080"
+        depends_on:
+        - nodered

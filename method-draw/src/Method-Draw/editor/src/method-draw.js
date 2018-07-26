@@ -2538,7 +2538,7 @@
         console.log('[mqtt] - cliente con id %s generado', clientId);
 
         // creo un cliente MQTT.
-        var client = new Paho.MQTT.Client('localhost', 80, '/mqtt', clientId.toString());
+        var client = new Paho.MQTT.Client(window.location.hostname, 80, '/mqtt', clientId.toString());
 
         // inicio la conexion, y me subscribo al topico definido en la constante.
         client.connect({
